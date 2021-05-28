@@ -1,0 +1,21 @@
+"VertexlitGeneric"
+{
+
+	"$basetexture" "models\weapons\arccw\mgsv\d114\Pistol_Delta_Magazine_C"
+	"$bumpmap" "models\weapons\arccw\mgsv\d114\Pistol_Delta_Magazine_N"
+	"$halflambert" "1"				
+	"$nocull" 1		
+
+	"$normalmapalphaenvmapmask" 1				
+	"$envmap" "env_cubemap"					
+	"$envmaptint" "[ .1 .1 .1 ]"					
+	"$envmapFresnel" "0.2"					
+
+	"$phong" "1"						
+	"$phongexponenttexture" "models\Kali\Weapons\MGSV\Pistols\Pistol_Delta_Magazine_Exp"
+	"$phongboost" "0.75"						
+	"$phongfresnelranges"	"[ .2 1.2 8]"	
+
+	"$PhongAlbedoTint" "1"		
+
+}
