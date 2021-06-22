@@ -168,6 +168,14 @@ $collisionmodel "base.smd"
 
 $sectionframes 30 210
 
+$sequence "deploy" {
+	"anims\deploy.smd"
+	activity "ACT_VM_DRAW" 1
+	fadein 0.2
+	fadeout 0.2
+	fps 60
+}
+
 $sequence "idle" {
 	"anims\idle.smd"
 	activity "ACT_VM_IDLE" 1

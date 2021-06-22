@@ -1,6 +1,6 @@
-att.PrintName = "15-Round Mag"
+att.PrintName = "22-Round Mag"
 att.Icon = Material("entities/acwatt_go_p250_mag_21.png", "mips smooth")
-att.Description = "Extended magazine for the Bren Ten. Medium length balances increased capacity with increased weight."
+att.Description = "Medium length balances increased capacity with increased weight."
 att.Desc_Pros = {
     "pro.magcap"
 }

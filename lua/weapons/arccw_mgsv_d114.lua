@@ -7,7 +7,7 @@ SWEP.PrintName = "Combat Pistol"
 SWEP.TrueName = "Delta-114"
 SWEP.Trivia_Class = "Pistol"
 SWEP.Trivia_Desc = "ive never played a metal gear game, yet im making this pack. lord help me"
-SWEP.Trivia_Manufacturer = "Dornaus & Dixon"
+SWEP.Trivia_Manufacturer = "Arms Material"
 SWEP.Trivia_Calibre = ".45 ACP"
 SWEP.Trivia_Mechanism = "Short Recoil"
 SWEP.Trivia_Country = "USA"
@@ -125,9 +125,9 @@ SWEP.AttachmentElements = {
 		VMBodygroups = {{ind = 1, bg = 1}}
 	},
     ["hushpuppy"] = {
-		VMBodygroups = {{ind = 1, bg = 2}}
+		VMBodygroups = {{ind = 3, bg = 1}}
 	},
-    ["short"] = {
+    ["snub"] = {
         VMBodygroups = {{ind = 2, bg = 2}},
         AttPosMods = {
             [3] = {
@@ -162,6 +162,30 @@ SWEP.AttachmentElements = {
         VMSkin = 1
     },
 }
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local vm = data.vm
+    local eles = data.eles
+    for i, k in pairs(eles or {}) do
+        if k == "hushpuppy" then
+            if wep.Attachments[4].Installed == "mgsv_d114_slide_short" then
+                vm:SetBodygroup(4,5)
+            elseif wep.Attachments[4].Installed == "mgsv_d114_slide_long" then
+                vm:SetBodygroup(4,4)
+            else
+                vm:SetBodygroup(4,3)
+            end
+        else
+            if wep.Attachments[4].Installed == "mgsv_d114_slide_short" then
+                vm:SetBodygroup(4,2)
+            elseif wep.Attachments[4].Installed == "mgsv_d114_slide_long" then
+                vm:SetBodygroup(4,1)
+            else
+                vm:SetBodygroup(4,0)
+            end
+        end
+    end
+end
 
 SWEP.ExtraSightDist = 10
 SWEP.GuaranteeLaser = true
@@ -267,7 +291,10 @@ SWEP.Animations = {
         Source = "idle_empty"
     },
     ["ready"] = {
-        Source = "idle"
+        Source = "deploy",
+        LHIKIn = 14/60,
+        LHIKOut = 10/60,
+        FrameRate = 60
     },
     ["fire"] = {
         Source = {"fire"},
